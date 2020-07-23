@@ -107,6 +107,7 @@ class AuthController extends Controller
        }else{
            return session('fang');
        }
+       echo 2222;
 
     }
 }
