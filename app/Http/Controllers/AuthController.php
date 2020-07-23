@@ -97,10 +97,8 @@ class AuthController extends Controller
         ];
     }
 
-    public function test($a){
-        $c = 'na';
-        $a = User::find(1);
-        $a->{$c};
-        return $a->{$c.'me'};
+    public function test(){
+       echo 111;
+
     }
 }
