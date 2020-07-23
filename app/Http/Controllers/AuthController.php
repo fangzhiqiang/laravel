@@ -98,7 +98,12 @@ class AuthController extends Controller
     }
 
     public function test(){
-       echo 111;
+       session('fang','111');
+       if(!session('fang')){
+            return 111;
+       }else{
+           return session('fang');
+       }
 
     }
 }
