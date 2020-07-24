@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::post('register','AuthController@register');
 Route::post('login','AuthController@login');
-
+Route::get('test1','AuthController@test1');
 Route::prefix('admin')->middleware(['auth:api'])->group(function(){
     Route::get('logout','AuthController@logout');
     Route::get('me','AuthController@me');

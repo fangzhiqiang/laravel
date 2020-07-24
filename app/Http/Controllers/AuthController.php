@@ -110,4 +110,8 @@ class AuthController extends Controller
        echo 2222;
 
     }
+
+    public function test1(){
+        return 111;
+    }
 }
