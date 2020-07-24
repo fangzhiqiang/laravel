@@ -19,9 +19,11 @@ Route::get('/', function () {
 
 Route::post('register','AuthController@register');
 Route::post('login','AuthController@login');
-Route::get('test','AuthController@test');
+
 Route::prefix('admin')->middleware(['auth:api'])->group(function(){
     Route::get('logout','AuthController@logout');
     Route::get('me','AuthController@me');
     Route::get('refresh','AuthController@refresh');
+    Route::get('test','AuthController@test');
+    Route::get('logout','AuthController@logout');
 });
