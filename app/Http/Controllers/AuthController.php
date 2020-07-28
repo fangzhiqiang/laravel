@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
@@ -113,7 +114,9 @@ class AuthController extends Controller
         /*event(new Test(1111));
         echo 2222;*/
         /*echo asset('storage/file.txt');*/
-        Storage::disk('public')->put('file.txt','dangzq');
+        //Storage::disk('public')->put('file.txt','dangzq');
         //return Storage::download('file.txt');
+        $res = Http::get('119.23.220.39/test.php');
+        return $res->json();
     }
 }
