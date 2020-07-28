@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\Test;
 use App\Http\Requests\AuthRequest;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -98,20 +102,18 @@ class AuthController extends Controller
     }
 
     public function test(){
-        echo 1111;
-        echo 'dasdasasd';
-       session(['fang'=>'111222']);
-       echo 111;
-       if(!session('fang')){
-            return 111;
-       }else{
-           return session('fang');
-       }
-       echo 2222;
-
+        return $this->success(['fail'],'');
     }
 
     public function test1(){
-        return 111;
+        /*Cache::add('fang','haha');
+        return Cache::get('fang');*/
+        //Cache::store('test')->put('fang','dasas');
+        //Cache::flush();
+        /*event(new Test(1111));
+        echo 2222;*/
+        /*echo asset('storage/file.txt');*/
+        Storage::disk('public')->put('file.txt','dangzq');
+        //return Storage::download('file.txt');
     }
 }
