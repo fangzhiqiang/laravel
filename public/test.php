@@ -1,2 +1,2 @@
 <?php
-return json_encode([1,2,3]);
+echo json_encode([1,2,3]);

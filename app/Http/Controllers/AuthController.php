@@ -117,6 +117,6 @@ class AuthController extends Controller
         //Storage::disk('public')->put('file.txt','dangzq');
         //return Storage::download('file.txt');
         $res = Http::get('119.23.220.39/test.php');
-        return $res->status();
+        var_dump($res->json());
     }
 }
